@@ -5,21 +5,8 @@ region = "ca-central-1"
 
 
 
-data "aws_ami" "myami"{
-
-owners = ["amazon"]
-most_recent = true
-
-filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm*"]
-  }
-
-
-}
-
 resource "aws_instance" "myec2" {
-  ami    = data.aws_ami.myami.id 
+  ami    = ami-0631168b8ae6e1731
   instance_type = "t3.micro"
 
 }
